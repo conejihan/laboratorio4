@@ -16,7 +16,7 @@ import hangman.model.dictionary.HangmanDictionary;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-
+import GameScore;
 
 public class GameModel {
     private int incorrectCount;
@@ -24,6 +24,8 @@ public class GameModel {
     private LocalDateTime dateTime;
     private int gameScore;
     private int[] lettersUsed;
+	private GameScore Gs;
+	
     
     
     private HangmanDictionary dictionary;
@@ -31,19 +33,26 @@ public class GameModel {
     private Scanner scan;
     private String randomWord;
     private char[] randomWordCharArray;
+	private int incorrectCount_C;
+	private int correctCount_C;
+	
     
     
-   
-    public GameModel(HangmanDictionary dictionary){
+    @Inject
+    public GameModel(HangmanDictionary dictionary,GameScore Gs){
         //this.dictionary = new EnglishDictionaryDataSource();
         this.dictionary=dictionary;
         randomWord = selectRandomWord();
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
+		incorrectCount_C = 0;
         correctCount = 0;
+		correctCount_C = 0;
         gameScore = 100;
+		this.Gs=Gs;
         
     }
+	
     
     //method: reset
     //purpose: reset this game model for a new game
@@ -54,6 +63,15 @@ public class GameModel {
         correctCount = 0;
         gameScore = 100;
     }
+	public void reset_C(){
+		incorrectCount_C = 0;
+		correctCount_C = 0;
+		
+	}
+	public int longitudPalabra(){
+		int logitud = randomWordCharArray.length;
+		return logitud;
+	}
 
     //setDateTime
     //purpose: sets game date/time to system date/time
@@ -73,11 +91,16 @@ public class GameModel {
             }
         }
         if(positions.size() == 0){
-            incorrectCount++;
-            gameScore -= 10;
+			reset_C();
+			incorrectCount++;
+            gameScore = Gs.calculateScore(correctCount_C,incorrectCount_C,longitudPalabra());
         } else {
+			reset_C();
             correctCount += positions.size();
-        }
+			gameScore = Gs.calculateScore(correctCount_C,incorrectCount_C,longitudPalabra);
+        }  
+		
+		
         return positions;
         
     }
