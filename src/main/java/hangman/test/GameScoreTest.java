@@ -36,7 +36,7 @@ public class GameScoreTest
     }
     @Test
     public void deberiaEstarEntre0y100() {
-        OriginalScore n = new OriginalScore();
+        OriginallScore n = new OriginallScore();
         boolean test = false;
         int prueba = n.calculateScore(0, 1, 5);
         if (prueba <= 100 && prueba >= 0) {
@@ -46,7 +46,7 @@ public class GameScoreTest
     }
     @Test
     public void noDeberiaSerMenora0() {
-         OriginalScore n = new OriginalScore();
+         OriginallScore n = new OriginallScore();
         boolean test = false;
         int prueba = n.calculateScore(0, 1, 5);
         if (prueba >= 0) {
