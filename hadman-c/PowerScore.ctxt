@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=PowerScore
+comment1.params=
+comment1.target=PowerScore()
+comment2.params=correctCount\ incoretCount\ log
+comment2.target=int\ calculateScore(int,\ int,\ int)
+comment2.text=\r\nCalcula\ el\ score\ dependiendo\ de\ la\ cantidad\ de\ letras\ correctas\ exponencialmente.\r\n@param\ correctCount\ cantidad\ de\ corectas\r\n@param\ incorrectoCount\ cantidad\ de\ incorrectas\r\n@param\ log\ longitud\ de\ la\ palabra\r\n@pre\ correctCoun\ >\ 1\ ||\ incorrectCount\ \=\ 1\r\n@pos\ retornar\ el\ score\r\n
+numComments=3

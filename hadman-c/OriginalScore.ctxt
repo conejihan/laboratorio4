@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=OriginalScore
+comment1.params=
+comment1.target=OriginalScore()
+comment2.params=correctCount\ incoretCount\ log
+comment2.target=int\ calculateScore(int,\ int,\ int)
+comment2.text=\r\nCalcula\ el\ score\ dependiendo\ de\ la\ cantidad\ de\ letras\ incorrectas.\r\n@param\ correctCount\ cantidad\ de\ corectas\r\n@param\ incorrectoCount\ cantidad\ de\ incorrectas\r\n@param\ log\ longitud\ de\ la\ palabra\r\n@pre\ incorrectCount\ \=\ 1\r\n@pos\ retornar\ el\ score\r\n
+comment3.params=
+comment3.target=int\ getScore()
+numComments=4

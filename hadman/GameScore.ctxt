@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=GameScore
+comment1.params=correctCount\ incoretCount\ log
+comment1.target=int\ calculateScore(int,\ int,\ int)
+numComments=2

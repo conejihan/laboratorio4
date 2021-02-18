@@ -1,8 +1,3 @@
- 
- 
-package hangman.model;
-
-
 import java.lang.Math;
 public class PowerScore implements GameScore{
     private int inicial;
